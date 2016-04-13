@@ -11,6 +11,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.4.2'
+  gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'capybara', '~> 2.7.0'
 end
 
 group :development do
@@ -18,4 +21,8 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-doc'
+end
+
+group :test do
+  gem 'database_cleaner'
 end
