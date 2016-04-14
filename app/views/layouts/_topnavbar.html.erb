@@ -13,9 +13,14 @@
         </li>
       </ul>
       <ul class="nav navbar-top-links navbar-right">
-        <li>
-          <%= render 'shared/sign_out' if signed_in? %>
-        </li>
+        <% if signed_in? %>
+          <li>
+            <%= link_to current_user.email, '#' %>
+          </li>
+          <li>
+            <%= render 'shared/sign_out' %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
