@@ -10,6 +10,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'clearance', '~> 1.13.0'
 
+# for theme insidia
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-rails', '4.3.0.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'
