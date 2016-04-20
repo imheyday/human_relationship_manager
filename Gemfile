@@ -26,6 +26,8 @@ group :development do
   gem 'spring'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 group :test do

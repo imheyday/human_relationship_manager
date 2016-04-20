@@ -4,13 +4,12 @@
       <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
         <i class="fa fa-reorder"></i>
       </button>
-      <a href="#" class="navbar-brand">HRM</a>
+      <%= link_to 'HRM', root_path, class: 'navbar-brand' %>
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav">
-        <li class="active">
-          <a href="">Menu item</a>
-        </li>
+        <%= active_li(t('home.menu.job_applications'), '') %>
+        <%= active_li(t('home.menu.candidates'), candidates_path) %>
       </ul>
       <ul class="nav navbar-top-links navbar-right">
         <% if signed_in? %>
