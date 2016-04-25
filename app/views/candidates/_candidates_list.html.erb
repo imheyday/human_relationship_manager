@@ -1,0 +1,45 @@
+<div class="ibox">
+  <div class="ibox-content">
+    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+      <thead>
+        <tr>
+          <th><%= t('candidate.attributes.id') %></th>
+          <th><%= t('candidate.attributes.full_name') %></th>
+          <th data-hide="phone"><%= t('candidate.attributes.created_at') %></th>
+          <th data-hide="phone"><%= t('candidate.attributes.updated_at') %></th>
+          <th><%= t('status') %></th>
+          <th class="text-right"><%= t('actions') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% candidates.each do |candidate_object| %>
+          <%= present(candidate_object) do |candidate| %>
+          <tr class='candidatesList-item'>
+            <td><%= candidate.id %></td>
+            <td><%= candidate.full_name %></td>
+            <td><%= l candidate.created_at, format: :short %></td>
+            <td><%= l candidate.updated_at, format: :short %></td>
+            <td>
+              <span class="label label-primary">Pending</span>
+            </td>
+            <td class="text-right">
+              <div class="btn-group">
+                <button class="btn-white btn btn-xs">View</button>
+                <button class="btn-white btn btn-xs">Edit</button>
+                <button class="btn-white btn btn-xs">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="7">
+            <ul class="pagination pull-right"></ul>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

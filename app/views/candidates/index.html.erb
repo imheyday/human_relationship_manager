@@ -3,3 +3,25 @@
     <h2><%= "#{I18n.t('home.menu.candidates')} (#{@candidates.count})" %></h2>
   </div>
 </div>
+
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+  <div class="row candidatesList">
+    <div class="col-lg-12">
+      <% if @candidates.count > 0 %>
+        <%= render 'candidates_list', candidates: @candidates %>
+      <% else %>
+        <%= render 'no_results' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+  $(function() {
+    $('.footable').footable();
+  });
+</script>
+
+<% end %>

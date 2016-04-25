@@ -1,0 +1,10 @@
+en:
+  candidate:
+    attributes:
+      id: 'ID'
+      full_name: 'Full name'
+      created_at: 'Date added'
+      updated_at: 'Date modified'
+    messages:
+      no_results: 'No candidates in data base'
+      add: 'Add a new candidate'

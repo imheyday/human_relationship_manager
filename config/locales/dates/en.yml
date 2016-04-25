@@ -1,0 +1,4 @@
+en:
+  time:
+    formats:
+      short: '%Y-%b-%d %H:%M'

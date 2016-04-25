@@ -25,3 +25,5 @@ en:
     menu:
       job_applications: 'Job applications'
       candidates: 'Candidates'
+  status: 'Status'
+  actions: 'Actions'
