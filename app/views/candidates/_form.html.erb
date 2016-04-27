@@ -1,0 +1,48 @@
+<%= form_for candidate, html: { class: 'form-horizontal' } do |f| %>
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><%= t('candidates.attributes.full_name') %></label>
+    <div class="row">
+      <div class="col-sm-3">
+        <%= f.text_field :first_name, class: 'form-control', placeholder: true %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.text_field :last_name, class: 'form-control', placeholder: true %>
+      </div>
+    </div>
+  </div>
+  <div class="hr-line-dashed"></div>
+  <div class="form-group">
+    <%= f.label :email, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <div class="input-group m-b">
+        <span class="input-group-addon">@</span>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="hr-line-dashed"></div>
+  <div class="form-group">
+    <%= f.label :gender, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.select :gender, [['male','male'],['female','female']], {}, { class: 'form-control m-b' } %>
+    </div>
+  </div>
+  <div class="hr-line-dashed"></div>
+  <div class="form-group">
+    <%= f.label :year_of_birth, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-4">
+      <%= f.text_field :year_of_birth, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="hr-line-dashed"></div>
+  <div class="form-group">
+    <div class="col-sm-4 col-sm-offset-2">
+      <%= link_to candidates_path, class: 'btn btn-white' do %>
+        <%= t('candidate.form.cancel') %>
+      <% end %>
+      <%= content_tag :button, type: :submit, class: 'btn btn-primary' do %>
+        <%= t('candidate.form.save') %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,21 +1,35 @@
 <div class="row wrapper border-bottom white-bg page-heading">
   <div class="col-lg-10">
-    <h2><%= "#{I18n.t('home.menu.candidates')} (#{@candidates.count})" %></h2>
+    <h2><%= "#{t('home.menu.candidates')} (#{@candidates.count})" %></h2>
   </div>
 </div>
 
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
   <div class="row candidatesList">
     <div class="col-lg-12">
-      <% if @candidates.count > 0 %>
-        <%= render 'candidates_list', candidates: @candidates %>
-      <% else %>
-        <%= render 'no_results' %>
-      <% end %>
+      <div class="ibox">
+        <div class="ibox-title">
+          <h5><%= t('candidate.index') %></h5>
+          <div class="ibox-tools">
+            <%= button_to new_candidate_path, class: 'btn btn-xs btn-primary', method: 'get' do %>
+              <i class="fa fa-plus-square"></i>
+              <%= t('candidate.messages.add') %>
+            <% end %>
+          </div>
+        </div>
+        <div class="ibox-content">
+          <% if @candidates.count > 0 %>
+            <%= render 'candidates_list', candidates: @candidates %>
+          <% else %>
+            <%= render 'no_results' %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 
 </div>
+
 <% content_for :javascript do %>
 
 <script type="text/javascript">

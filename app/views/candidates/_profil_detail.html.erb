@@ -1,0 +1,26 @@
+<div class="ibox float-e-margins">
+  <div class="ibox-title">
+    <h5><%= t('candidate.detail') %></h5>
+  </div>
+  <div>
+    <div class="ibox-content no-padding border-left-right">
+      <!-- <img alt="image" class="img-responsive" src="img/profile_big.jpg"> -->
+    </div>
+    <div class="ibox-content profile-content">
+      <h4><strong><%= candidate.full_name %></strong></h4>
+      <p><i class="fa fa-envelope"></i> <%= candidate.email %></p>
+      <p><i class="fa fa-birthday-cake"></i> <%= candidate.year_of_birth %></p>
+      <p><%= raw gender_icon(candidate.gender) %> <%= candidate.gender %></p>
+      <div class="user-button">
+        <div class="row">
+          <div class="col-md-6">
+            <%= link_to edit_candidate_path(candidate.id), class: 'btn btn-default btn-sm btn-block' do %>
+              <i class="fa fa-pencil-square-o"></i>
+              <%= t('candidate.edit') %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

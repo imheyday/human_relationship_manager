@@ -8,3 +8,5 @@ en:
     messages:
       no_results: 'No candidates in data base'
       add: 'Add a new candidate'
+    new: 'New candidate'
+    index: 'Candidates list'

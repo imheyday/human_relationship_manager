@@ -8,7 +8,19 @@ class CandidatePresenter
   end
 
   def full_name
-    "#{@candidate.last_name.upcase} #{@candidate.first_name}"
+    "#{@candidate.first_name.capitalize} #{@candidate.last_name.upcase}"
+  end
+
+  def email
+    @candidate.email
+  end
+
+  def gender
+    @candidate.gender
+  end
+
+  def year_of_birth
+    @candidate.year_of_birth
   end
 
   def created_at
