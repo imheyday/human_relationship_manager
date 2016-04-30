@@ -1,0 +1,17 @@
+en:
+  job_application:
+    attributes:
+      id: 'ID'
+      received_at: 'Date received'
+      cv_file: 'CV'
+      created_at: 'Date added'
+      updated_at: 'Date modified'
+    messages:
+      no_results: 'No job applications in data base'
+      add: 'Add a new job application'
+      delete?: 'Are you sure ?'
+    title:
+      new: 'New job application'
+      index: 'Job application list'
+      show: 'Job application - %{name}'
+      edit: 'Edit Job application - %{name}'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420212143) do
+ActiveRecord::Schema.define(version: 20160430121208) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "first_name"
@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20160420212143) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "job_applications", force: :cascade do |t|
+    t.datetime "received_at"
+    t.text     "cv_file"
+    t.integer  "candidate_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "job_applications", ["candidate_id"], name: "index_job_applications_on_candidate_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false

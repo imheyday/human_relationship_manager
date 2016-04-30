@@ -1,0 +1,43 @@
+<table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+  <thead>
+    <tr>
+      <th><%= t('job_application.attributes.id') %></th>
+      <th><%= t('job_application.attributes.received_at') %></th>
+      <th><%= t('job_application.attributes.cv_file') %></th>
+      <th data-hide="phone"><%= t('job_application.attributes.created_at') %></th>
+      <th data-hide="phone"><%= t('job_application.attributes.updated_at') %></th>
+      <th><%= t('status') %></th>
+      <th class="text-right"><%= t('actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% job_applications.each do |job_application_object| %>
+      <% present(job_application_object) do |job_application| %>
+      <tr class='job_applicationsList-item'>
+        <td><%= job_application.id %></td>
+        <td><%= job_application.received_at %></td>
+        <td><%= job_application.cv_file %></td>
+        <td><%= l job_application.created_at, format: :short %></td>
+        <td><%= l job_application.updated_at, format: :short %></td>
+        <td>
+          <span class="label label-warning"><%= t('job_application.status.new') %></span>
+        </td>
+        <td class="text-right">
+          <div class="btn-group">
+            <%= link_to t('view'), job_application_path(job_application.id), class: 'btn-white btn btn-xs' %>
+            <%= link_to t('edit'), edit_job_application_path(job_application.id), class: 'btn-white btn btn-xs' %>
+            <%= link_to t('delete'), job_application_path(job_application.id), method: :delete, class: 'btn-white btn btn-xs', data: { confirm: t('job_application.messages.delete?') } %>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="7">
+        <ul class="pagination pull-right"></ul>
+      </td>
+    </tr>
+  </tfoot>
+</table>

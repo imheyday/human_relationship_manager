@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :candidates
+  resources :job_applications
 
   # CLEARANCE
   resources :passwords, controller: 'clearance/passwords', only: [:create, :new]
