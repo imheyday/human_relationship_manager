@@ -1,6 +1,12 @@
 language: ruby
 rvm:
   - 2.3.0
+env:
+  - RAILS_ENV=test
+script:
+  - bundle exec rake db:schema:load
+  - bundle exec rake db:test:prepare
+  - bundle exec rake spec
 addons:
   code_climate:
     repo_token: 017200d3f4ac6594f65075d361c8decb04745b077318dd25c1279e58ebb17711
