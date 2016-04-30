@@ -10,4 +10,15 @@ RSpec.describe CandidatesController do
       end
     end
   end
+  describe '#update' do
+    context 'good attributes' do
+      it 'render edit page' do
+        allow(controller).to receive(:signed_in?).and_return(true)
+        candidate = FactoryGirl.create(:candidate)
+        candidate.first_name = 'toto'
+        post :update, id: candidate.id, candidate: candidate.attributes
+        expect(response).to redirect_to candidate_path(1)
+      end
+    end
+  end
 end

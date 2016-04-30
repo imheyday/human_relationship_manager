@@ -23,8 +23,17 @@
   <div class="hr-line-dashed"></div>
   <div class="form-group">
     <%= f.label :gender, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-4">
-      <%= f.select :gender, [['male','male'],['female','female']], {}, { class: 'form-control m-b' } %>
+    <div class="col-sm-2">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.radio_button :gender, 'male', class: 'radio-primary' %>
+          <%= f.label(:gender_male, t('candidate.gender.male')) %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.radio_button :gender, 'female', class: 'radio-primary' %>
+          <%= f.label(:gender_female, t('candidate.gender.female')) %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hr-line-dashed"></div>
@@ -37,7 +46,7 @@
   <div class="hr-line-dashed"></div>
   <div class="form-group">
     <div class="col-sm-4 col-sm-offset-2">
-      <%= link_to candidates_path, class: 'btn btn-white' do %>
+      <%= link_to :back, class: 'btn btn-white' do %>
         <%= t('candidate.form.cancel') %>
       <% end %>
       <%= content_tag :button, type: :submit, class: 'btn btn-primary' do %>

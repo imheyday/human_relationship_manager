@@ -1,24 +1,24 @@
-<div class="row wrapper border-bottom white-bg page-heading">
-  <div class="col-lg-10">
-    <h2><%= t('candidate.show') %> n°<%= @candidate.id %></h2>
-  </div>
-</div>
-
-<div class="wrapper wrapper-content">
-  <div class="row animated fadeInRight">
-    <div class="col-md-4">
-      <%= present(@candidate) do |candidate| %>
-        <%= render 'profil_detail', candidate: candidate %>
-      <% end %>
+<% present(@candidate) do |candidate| %>
+  <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+      <h2><%= t('candidate.title.show', name: candidate.full_name) %></h2>
     </div>
-    <div class="col-md-8">
-      <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5>Activites</h5>
-        </div>
-        <div class="ibox-content">
+  </div>
+
+  <div class="wrapper wrapper-content">
+    <div class="row animated fadeInRight">
+      <div class="col-md-4">
+        <%= render 'profil_detail', candidate: candidate %>
+      </div>
+      <div class="col-md-8">
+        <div class="ibox float-e-margins">
+          <div class="ibox-title">
+            <h5>Activites</h5>
+          </div>
+          <div class="ibox-content">
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

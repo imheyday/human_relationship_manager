@@ -24,6 +24,21 @@ class CandidatesController < ApplicationController
     find_candidate
   end
 
+  def update
+    find_candidate
+    if @candidate.update_attributes(candidate_params)
+      redirect_to candidate_path(@candidate)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    find_candidate
+    @candidate.destroy
+    redirect_to candidates_path
+  end
+
   private
 
   def candidate_params

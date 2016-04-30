@@ -8,5 +8,9 @@ en:
     messages:
       no_results: 'No candidates in data base'
       add: 'Add a new candidate'
-    new: 'New candidate'
-    index: 'Candidates list'
+      delete?: 'Are you sure ?'
+    title:
+      new: 'New candidate'
+      index: 'Candidates list'
+      show: 'Candidate - %{name}'
+      edit: 'Edit Candidate - %{name}'

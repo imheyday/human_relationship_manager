@@ -1,0 +1,19 @@
+<% present(@candidate) do |candidate| %>
+  <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+      <h2><%= t('candidate.title.edit', name: candidate.full_name) %></h2>
+    </div>
+  </div>
+
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <%= render 'form', candidate: @candidate %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

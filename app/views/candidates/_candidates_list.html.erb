@@ -22,9 +22,9 @@
         </td>
         <td class="text-right">
           <div class="btn-group">
-            <button class="btn-white btn btn-xs">View</button>
-            <button class="btn-white btn btn-xs">Edit</button>
-            <button class="btn-white btn btn-xs">Delete</button>
+            <%= link_to t('view'), candidate_path(candidate.id), class: 'btn-white btn btn-xs' %>
+            <%= link_to t('edit'), edit_candidate_path(candidate.id), class: 'btn-white btn btn-xs' %>
+            <%= link_to t('delete'), candidate_path(candidate.id), method: :delete, class: 'btn-white btn btn-xs', data: { confirm: t('candidate.messages.delete?') } %>
           </div>
         </td>
       </tr>
