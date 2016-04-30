@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'clearance', '~> 1.13.0'
+gem 'figaro', '~> 1.1.1'
 
 # for theme insidia
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -32,4 +33,5 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'codeclimate-test-reporter', require: nil
 end
