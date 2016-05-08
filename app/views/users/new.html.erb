@@ -8,7 +8,7 @@
         <div class="checkbox"><label> <input type="checkbox"><i></i> Agree the terms and policy </label></div>
       </div>
       <%= form.button t('.new_user'), class: 'btn btn-primary block full-width m-b', type: 'submit' %>
-
+      <%= render 'shared/google_connect', path: @google_auth_path %>
       <div class="other-links">
         <p class="text-muted text-center"><small><%= t('.has_account') %></small></p>
         <%= link_to t(".sign_in"), sign_in_path, class: 'btn btn-sm btn-white btn-block' %>

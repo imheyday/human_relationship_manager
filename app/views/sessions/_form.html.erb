@@ -7,7 +7,7 @@
     <%= form.password_field :password, class: 'form-control', placeholder: 'password' %>
   </div>
   <%= form.button t('.new_session'), class: 'btn btn-primary block full-width m-b', type: 'submit' %>
-
+  <%= render 'shared/google_connect', path: @google_auth_path %>
   <div class="other-links">
     <%= link_to new_password_path do %>
       <small><%= t('.forgot_password') %></small>
