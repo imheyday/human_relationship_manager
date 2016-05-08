@@ -1,4 +1,6 @@
 class CandidatesController < ApplicationController
+  before_action :require_login
+
   def index
     @candidates = Candidate.all
   end
