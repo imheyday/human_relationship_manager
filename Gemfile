@@ -12,6 +12,7 @@ gem 'clearance', '~> 1.13.0'
 gem 'figaro', '~> 1.1.1'
 gem 'google-api-client', '~> 0.9'
 gem 'httparty', '~> 0.13.7'
+gem 'webmock', '~> 2.0'
 
 # for theme insidia
 gem 'bootstrap-sass', '~> 3.3.6'
