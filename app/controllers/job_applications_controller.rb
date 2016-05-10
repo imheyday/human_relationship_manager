@@ -5,6 +5,14 @@ class JobApplicationsController < ApplicationController
     @job_applications = JobApplication.all
   end
 
+  def show
+    find_candidate
+  end
+
+  def new
+    @job_application = JobApplication.new
+  end
+
   def create
     @job_application = JobApplication.new(job_application_params)
     if @job_application.save
@@ -12,6 +20,10 @@ class JobApplicationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    find_candidate
   end
 
   def update

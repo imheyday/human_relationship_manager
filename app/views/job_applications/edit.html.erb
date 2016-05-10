@@ -1,0 +1,19 @@
+<% present(@job_application) do |job_application| %>
+  <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+      <h2><%= t('job_application.title.edit', time: job_application.received_at) %></h2>
+    </div>
+  </div>
+
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+          <div class="ibox-content">
+            <%= render 'form', job_application: @job_application %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
