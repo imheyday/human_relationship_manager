@@ -4,9 +4,7 @@ class SessionsController < Clearance::SessionsController
   end
 
   def auth_with_google
-    client = GoogleClient.new(code: request['code'])
-    @oauth_hash = client.fetch_access_token if client.code.present?
-    user = UserAuthentication.new(@oauth_hash).auth!
+    user = find_user(request['code'])
     if user
       sign_in(user)
       notice = t('success.messages.google_auth')
@@ -14,5 +12,14 @@ class SessionsController < Clearance::SessionsController
       notice = t('error.messages.google_auth')
     end
     redirect_to root_path, notice: notice
+  end
+
+  private
+
+  def find_user(code)
+    client = GoogleClient.new(code: code)
+    return nil if client.code.nil?
+    oauth_hash = client.fetch_access_token
+    UserAuthentication.new(oauth_hash).auth!
   end
 end

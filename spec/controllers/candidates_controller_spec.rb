@@ -2,23 +2,19 @@ require 'rails_helper'
 
 RSpec.describe CandidatesController do
   describe '#create' do
-    context 'good attributes' do
-      it 'render show page' do
-        allow(controller).to receive(:signed_in?).and_return(true)
-        post :create, candidate: FactoryGirl.attributes_for(:candidate)
-        expect(response).to redirect_to candidate_path(1)
-      end
+    it 'render show page' do
+      allow(controller).to receive(:signed_in?).and_return(true)
+      post :create, candidate: FactoryGirl.attributes_for(:candidate)
+      expect(response).to redirect_to candidate_path(1)
     end
   end
   describe '#update' do
-    context 'good attributes' do
-      it 'render edit page' do
-        allow(controller).to receive(:signed_in?).and_return(true)
-        candidate = FactoryGirl.create(:candidate)
-        candidate.first_name = 'toto'
-        post :update, id: candidate.id, candidate: candidate.attributes
-        expect(response).to redirect_to candidate_path(1)
-      end
+    it 'render edit page' do
+      allow(controller).to receive(:signed_in?).and_return(true)
+      candidate = FactoryGirl.create(:candidate)
+      candidate.first_name = 'toto'
+      post :update, id: candidate.id, candidate: candidate.attributes
+      expect(response).to redirect_to candidate_path(1)
     end
   end
 end
