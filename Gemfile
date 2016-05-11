@@ -20,7 +20,7 @@ gem 'font-awesome-rails', '4.3.0.0'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'
-  gem 'webmock', '~> 2.0'
+  gem 'webmock', '~> 2.0', require: false
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'capybara', '~> 2.7.0'
 end

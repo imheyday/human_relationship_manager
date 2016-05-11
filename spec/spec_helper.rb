@@ -2,6 +2,7 @@ require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 require 'webmock/rspec'
+WebMock.disable_net_connect!(allow: 'codeclimate.com')
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
