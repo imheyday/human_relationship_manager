@@ -12,7 +12,6 @@ gem 'clearance', '~> 1.13.0'
 gem 'figaro', '~> 1.1.1'
 gem 'google-api-client', '~> 0.9'
 gem 'httparty', '~> 0.13.7'
-gem 'webmock', '~> 2.0'
 
 # for theme insidia
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -21,6 +20,7 @@ gem 'font-awesome-rails', '4.3.0.0'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.2'
+  gem 'webmock', '~> 2.0'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'capybara', '~> 2.7.0'
 end

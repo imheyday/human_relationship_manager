@@ -11,8 +11,8 @@ RSpec.describe UserAuthentication do
   end
   describe '#auth!' do
     it 'authenticate user with token' do
-      userinfo = File.read 'spec/support/responses/google_userinfo.json'
-      stub_request(:get, 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=1234AZERTY&alt=json').with(
+      userinfo = File.read('spec/support/responses/google_userinfo.json')
+      WebMock.stub_request(:get, 'https://www.googleapis.com/oauth2/v1/userinfo?access_token=1234AZERTY&alt=json').with(
         headers: {
           'Accept' => '*/*',
           'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
