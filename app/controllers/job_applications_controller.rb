@@ -6,7 +6,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def show
-    find_candidate
+    find_job_application
   end
 
   def new
@@ -23,11 +23,11 @@ class JobApplicationsController < ApplicationController
   end
 
   def edit
-    find_candidate
+    find_job_application
   end
 
   def update
-    find_candidate
+    find_job_application
     if @job_application.update_attributes(job_application_params)
       redirect_to job_application_path(@job_application)
     else
@@ -41,7 +41,7 @@ class JobApplicationsController < ApplicationController
     params.require(:job_application).permit(:received_at, :cv_file, :candidate_id)
   end
 
-  def find_candidate
+  def find_job_application
     @job_application = JobApplication.find(params[:id])
   end
 end
