@@ -13,7 +13,7 @@
     <%= f.label :contract_type, class: 'col-sm-2 control-label' %>
     <div class="col-sm-6">
       <%= f.collection_select :contract_type_id, ContractType.all, :id, :name, {prompt: true},  { class: 'form-control m-b' } %>
-      <%= t('or_create') %>
+      <p class="form-text-separation"><span><%= t('or_create') %></span></p>
       <%= f.fields_for :contract_type, job_application.build_contract_type do |contract_type| %>
         <%= contract_type.text_field :name, class: 'form-control', placeholder: t('contract_type.attributes.name') %>
       <% end %>
@@ -24,7 +24,7 @@
     <%= f.label :candidate, class: 'col-sm-2 control-label' %>
     <div class="col-sm-6">
       <%= f.collection_select :candidate_id, Candidate.all, :id, :full_name, {prompt: true},  { class: 'form-control m-b' } %>
-      <%= t('or_create') %>
+      <p class="form-text-separation"><span><%= t('or_create') %></span></p>
       <%= f.fields_for :candidate, job_application.build_candidate do |candidate| %>
         <div class="row">
           <div class="col-sm-6">
@@ -70,7 +70,7 @@
     <%= f.label :job_type, class: 'col-sm-2 control-label' %>
     <div class="col-sm-6">
       <%= f.collection_select :job_type_id, JobType.all, :id, :name, {prompt: true},  { class: 'form-control m-b' } %>
-      <%= t('or_create') %>
+      <p class="form-text-separation"><span><%= t('or_create') %></span></p>
       <%= f.fields_for :job_type, job_application.build_job_type do |job_type| %>
         <%= job_type.text_field :name, class: 'form-control', placeholder: t('job_type.attributes.name') %>
       <% end %>
