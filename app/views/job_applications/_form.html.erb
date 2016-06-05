@@ -23,7 +23,7 @@
   <div class="form-group">
     <%= f.label :candidate, class: 'col-sm-2 control-label' %>
     <div class="col-sm-6">
-      <%= f.collection_select :candidate_id, Candidate.all, :id, :to_presenter, {prompt: true},  { class: 'form-control m-b' } %>
+      <%= f.collection_select :candidate_id, Candidate.all, :id, :full_name, {prompt: true},  { class: 'form-control m-b' } %>
       <%= t('or_create') %>
       <%= f.fields_for :candidate, job_application.build_candidate do |candidate| %>
         <div class="row">

@@ -1,4 +1,4 @@
-class CandidatePresenter
+class CandidatePresenter < BasePresenter
   def initialize(candidate)
     @candidate = candidate
   end
@@ -8,7 +8,7 @@ class CandidatePresenter
   end
 
   def full_name
-    "#{@candidate.first_name.capitalize} #{@candidate.last_name.upcase}"
+    @candidate.full_name
   end
 
   def email
