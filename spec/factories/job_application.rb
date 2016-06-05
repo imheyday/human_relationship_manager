@@ -4,5 +4,7 @@ FactoryGirl.define do
     cv_file 'my-cv.pdf'
     created_at DateTime.current
     updated_at DateTime.current
+    association :contract_type
+    association :candidate
   end
 end

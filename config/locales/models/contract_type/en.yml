@@ -1,0 +1,6 @@
+en:
+  contract_type:
+    attributes:
+      name: name
+    messages:
+      create_new: Create new contract type

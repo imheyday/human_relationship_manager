@@ -4,6 +4,7 @@ class CreateJobApplications < ActiveRecord::Migration
       t.datetime :received_at
       t.text :cv_file
       t.references :candidate, index: true, foreign_key: true
+      t.references :contract_type, index: true, foreign_key: true
 
       t.timestamps null: false
     end

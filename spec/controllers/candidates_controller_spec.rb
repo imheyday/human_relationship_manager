@@ -5,7 +5,7 @@ RSpec.describe CandidatesController do
     it 'render show page' do
       allow(controller).to receive(:signed_in?).and_return(true)
       post :create, candidate: FactoryGirl.attributes_for(:candidate)
-      expect(response).to redirect_to candidate_path(1)
+      expect(response).to redirect_to candidate_path(Candidate.last.id)
     end
   end
   describe '#update' do
@@ -14,7 +14,7 @@ RSpec.describe CandidatesController do
       candidate = FactoryGirl.create(:candidate)
       candidate.first_name = 'toto'
       post :update, id: candidate.id, candidate: candidate.attributes
-      expect(response).to redirect_to candidate_path(1)
+      expect(response).to redirect_to candidate_path(candidate.id)
     end
   end
 end

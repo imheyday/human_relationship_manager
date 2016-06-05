@@ -6,7 +6,7 @@
       <th><%= t('job_application.attributes.cv_file') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.created_at') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.updated_at') %></th>
-      <th><%= t('status') %></th>
+      <th><%= t('job_application.attributes.contract_type.name') %></th>
       <th class="text-right"><%= t('actions') %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= l job_application.created_at, format: :short %></td>
         <td><%= l job_application.updated_at, format: :short %></td>
         <td>
-          <span class="label label-warning"><%= t('job_application.status.new') %></span>
+          <span class="label label-warning"><%= job_application.contract_name %></span>
         </td>
         <td class="text-right">
           <div class="btn-group">
