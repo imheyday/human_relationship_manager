@@ -8,12 +8,15 @@ en:
       updated_at: Date modified
       contract_type:
         name: Contract name
+      job_type:
+        name: Job name
       candidate: Candidate
     messages:
       no_results: No job applications in data base
       add: Add a new job application
       delete?: Are you sure ?
       no_contract: 'undefine'
+      no_job: 'undefine'
       no_candidate: 'No candidate'
     title:
       new: New job application

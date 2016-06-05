@@ -4,6 +4,7 @@
       <th><%= t('job_application.attributes.received_at') %></th>
       <th><%= t('job_application.attributes.candidate') %></th>
       <th><%= t('job_application.attributes.contract_type.name') %></th>
+      <th><%= t('job_application.attributes.job_type.name') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.created_at') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.updated_at') %></th>
       <th class="text-right"><%= t('actions') %></th>
@@ -18,6 +19,7 @@
         <td>
           <span class="label label-warning"><%= job_application.contract_name %></span>
         </td>
+        <td><%= job_application.job_name %></td>
         <td><%= l job_application.created_at, format: :short %></td>
         <td><%= l job_application.updated_at, format: :short %></td>
         <td class="text-right">

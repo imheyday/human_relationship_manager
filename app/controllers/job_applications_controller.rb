@@ -41,6 +41,7 @@ class JobApplicationsController < ApplicationController
     params.require(:job_application).permit(
       :received_at, :cv_file, :candidate_id, :contract_type_id,
       contract_type_attributes: [:name],
+      job_type_attributes: [:name],
       candidate_attributes: [:first_name, :last_name, :email, :gender, :year_of_birth]
     )
   end

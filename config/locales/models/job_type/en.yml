@@ -1,0 +1,6 @@
+en:
+  job_type:
+    attributes:
+      name: name
+    messages:
+      create_new: Create new job type
