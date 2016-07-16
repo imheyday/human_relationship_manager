@@ -14,6 +14,7 @@ gem 'google-api-client', '~> 0.9'
 gem 'httparty', '~> 0.13.7'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.4'
+gem 'paperclip', '~> 5.0.0.beta2'
 
 # for theme insidia
 gem 'bootstrap-sass', '~> 3.3.6'

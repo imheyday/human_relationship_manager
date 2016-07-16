@@ -3,7 +3,7 @@ en:
     attributes:
       id: ID
       received_at: Date received
-      cv_file: CV
+      cv: CV
       created_at: Date added
       updated_at: Date modified
       contract_type:
@@ -18,6 +18,7 @@ en:
       no_contract: 'undefine'
       no_job: 'undefine'
       no_candidate: 'No candidate'
+      link_to_cv_file: 'link to cv'
     title:
       new: New job application
       index: Job application list

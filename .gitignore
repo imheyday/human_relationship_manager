@@ -20,3 +20,5 @@
 # Ignore application configuration
 /config/application.yml
 /lib/assets/client_secrets.json
+
+/public/system/*

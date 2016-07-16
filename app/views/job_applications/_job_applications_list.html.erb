@@ -5,6 +5,7 @@
       <th><%= t('job_application.attributes.candidate') %></th>
       <th><%= t('job_application.attributes.contract_type.name') %></th>
       <th><%= t('job_application.attributes.job_type.name') %></th>
+      <th><%= t('job_application.attributes.cv') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.created_at') %></th>
       <th data-hide="phone"><%= t('job_application.attributes.updated_at') %></th>
       <th class="text-right"><%= t('actions') %></th>
@@ -14,12 +15,13 @@
     <% job_applications.each do |job_application_object| %>
       <% present(job_application_object) do |job_application| %>
       <tr class='job_applicationsList-item'>
-        <td><%= job_application.receive_date %></td>
+        <td><%= job_application.received_date %></td>
         <td><%= job_application.candidate_link %></td>
         <td>
           <span class="label label-warning"><%= job_application.contract_name %></span>
         </td>
         <td><%= job_application.job_name %></td>
+        <td><%= link_to t('job_application.messages.link_to_cv_file'), job_application.cv_url %></td>
         <td><%= l job_application.created_at, format: :short %></td>
         <td><%= l job_application.updated_at, format: :short %></td>
         <td class="text-right">

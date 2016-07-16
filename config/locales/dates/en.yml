@@ -1,5 +1,0 @@
-en:
-  time:
-    formats:
-      short: '%Y-%b-%d %H:%M'
-      short_date: '%Y-%b-%d'

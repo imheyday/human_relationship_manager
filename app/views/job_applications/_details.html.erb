@@ -3,8 +3,29 @@
     <h5><%= t('job_applications.details') %></h5>
   </div>
   <div>
-    <div class="ibox-content no-padding">
-
+    <div class="ibox-content">
+      <h4><strong><%= job_application.candidate_name %></strong></h4>
+      <p>
+        <i class="fa fa-birthday-cake"></i>
+        <%= job_application.candidate_age %>
+      </p>
+      <p>
+        <i class="fa fa-venus-mars"></i>
+        <%= job_application.candidate_gender %>
+      </p>
+      <p>
+        <i class="fa fa-envelope-o"></i>
+        <%= job_application.candidate_email %>
+      </p>
+      <hr>
+      <h5><strong><%= t('job_applications.received_at') %></strong></h5>
+      <p><%= l job_application.received_at, format: :short_date %></p>
+      <h5><strong><%= t('job_applications.contract_type_name') %></strong></h5>
+      <p><%= job_application.contract_type.name %></p>
+      <h5><strong><%= t('job_applications.job_type_name') %></strong></h5>
+      <p><%= job_application.job_type.name %></p>
+      <h5><strong><%= t('job_applications.cv') %></strong></h5>
+      <p><%= link_to t('job_application.messages.link_to_cv_file'), job_application.cv_url, target: '_blank' %></p>
     </div>
   </div>
 </div>
